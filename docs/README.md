@@ -16,7 +16,7 @@ The agent follows a strict **Plan → Execute → Verify** loop. Every action is
 | **Memory** | Persistent deep memory, experience engine, dream-cycle reflection, learning engine |
 | **Security** | Legal compliance gating, engagement authorisation, forensic evidence collection, penetration testing toolkit, malware analysis sandbox, network IDS, bug bounty scanning |
 | **Tools** | Code generation and review, book and app writing assistants, data annotation |
-| **Hardware** | Raspberry Pi Pico serial bridge, AR glasses, drone fleet control, mobile WebSocket bridge |
+| **Hardware** | AR glasses, drone fleet control, mobile WebSocket bridge |
 | **Infrastructure** | AWS S3 + Dropbox cloud sync, Docker service deployment, self-improvement, backup and recovery, notification centre |
 | **Interfaces** | Desktop dashboard, voice activation (wake-word), screen reading and control |
 | **Governance** | Full audit ledger, tool reputation tracking, confidence scoring, auto-recovery on failure |
