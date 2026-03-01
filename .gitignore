@@ -12,3 +12,4 @@ build/
 apex/data/
 apex/memory/
 apex/docs/private/
+hardware/pico_bridge.py
