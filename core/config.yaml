@@ -1,0 +1,91 @@
+# ============================================================
+# APEX AI Agent Configuration
+# ============================================================
+
+# --- Active Provider ---
+# Options: ollama | openai | anthropic
+provider: ollama
+
+# ============================================================
+# Provider Configurations
+# ============================================================
+
+providers:
+
+  ollama:
+    endpoint: http://localhost:11434
+    model: llama3.3:70b-instruct-q4_K_M
+    timeout: 120
+    parameters:
+      temperature: 0.3
+      num_ctx: 16384
+      top_k: 40
+      top_p: 0.9
+      repeat_penalty: 1.1
+
+  openai:
+    endpoint: https://api.openai.com/v1
+    model: gpt-4o
+    api_key_env: OPENAI_API_KEY        # Set this environment variable
+    timeout: 60
+    parameters:
+      temperature: 0.3
+      max_tokens: 4096
+      top_p: 0.9
+
+  anthropic:
+    endpoint: https://api.anthropic.com/v1
+    model: claude-sonnet-4-6
+    api_key_env: ANTHROPIC_API_KEY     # Set this environment variable
+    timeout: 60
+    parameters:
+      temperature: 0.3
+      max_tokens: 4096
+      top_p: 0.9
+
+# ============================================================
+# Storage Paths
+# ============================================================
+
+storage:
+  base: C:/ai_agent/apex/data
+  memory: C:/ai_agent/apex/memory
+  logs: C:/ai_agent/apex/data/logs
+  reports: C:/ai_agent/apex/data/reports
+  cache: C:/ai_agent/apex/data/cache
+  exports: C:/ai_agent/apex/data/exports
+
+# ============================================================
+# Agent Behaviour
+# ============================================================
+
+agent:
+  name: Apex
+  trust_threshold: 70          # Confidence % below which agent escalates to user
+  max_retries: 3               # Max retries per failed tool call
+  audit_trail: true            # Log every action to ledger
+  verify_actions: true         # Verify each step before proceeding
+
+# ============================================================
+# Module Enable / Disable
+# ============================================================
+# Set a module to false to prevent tool discovery from loading it.
+# All modules default to enabled if omitted.
+
+modules:
+  memory:         true
+  security:       true
+  tools:          true
+  hardware:       true
+  infrastructure: true
+  interfaces:     true
+
+# ============================================================
+# Logging
+# ============================================================
+
+logging:
+  level: INFO                  # DEBUG | INFO | WARNING | ERROR
+  file: C:/ai_agent/apex/data/logs/apex.log
+  max_size_mb: 10
+  backup_count: 5
